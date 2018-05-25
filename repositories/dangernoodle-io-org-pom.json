@@ -1,0 +1,14 @@
+{
+    "name": "dangernoodle-io-org-pom",
+    "settings": {
+        "branches": {
+            "protections": {
+                "master": {
+                    "requiredStatusChecks": {
+                        "requireUpToDate": true
+                    }
+                }
+            }
+        }
+    }
+}

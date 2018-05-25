@@ -1,0 +1,10 @@
+{
+    "name": "hello-dangernoodle",
+    "settings": {
+        "branches": {
+            "other": [
+                "gh-pages"
+            ]
+        }
+    }
+}

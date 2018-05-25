@@ -1,0 +1,24 @@
+{
+    "organization": "dangernoodle-io",
+    "settings": {
+        "initialize": true,
+        "teams": {
+            "bots": "admin"
+        },
+        "branches": {
+            "protections": {
+                "master": {
+                    "requiredStatusChecks": {
+                        "requireUpToDate": true,
+                        "contexts": [
+                            "continuous-integration/travis-ci",
+                            "coverage/coveralls"
+                        ]
+                    }
+                },
+                "gh-pages": {
+                }
+            }
+        }
+    }
+}
