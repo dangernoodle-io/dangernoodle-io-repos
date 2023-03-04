@@ -1,6 +1,7 @@
 {
     "name": "slack-bot-api",
     "settings": {
+	"archived": true,
         "branches": {
             "other": [
                 "gh-pages"
