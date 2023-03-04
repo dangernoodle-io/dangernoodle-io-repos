@@ -7,6 +7,15 @@
         },
         "branches": {
             "protections": {
+		"main": {
+		    "requiredStatusChecks": {
+                        "requireUpToDate": true,
+                        "contexts": [
+			]
+		    },
+		    "pushAccess": {
+		    }
+		},
                 "master": {
                     "requiredStatusChecks": {
                         "requireUpToDate": true,
@@ -18,6 +27,7 @@
                 },
                 "gh-pages": {
                 }
+		
             }
         }
     }
