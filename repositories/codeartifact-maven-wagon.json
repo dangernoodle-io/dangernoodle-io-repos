@@ -1,0 +1,8 @@
+{
+    "name": "codeartifact-maven-wagon",
+    "settings": {
+	"branches": {
+	    "primary": "main"
+	}
+    }
+}
