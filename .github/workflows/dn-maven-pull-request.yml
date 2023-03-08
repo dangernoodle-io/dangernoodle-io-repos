@@ -2,15 +2,35 @@ name: dangernoodle.io maven pull request workflow
 
 on:
   workflow_call:
-    secrets: inherit
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Maven Action
+      - name: setup-maven
+        id: setup-maven
         uses: s4u/setup-maven-action@v1.7.0
         with:
           java-version: 17
           maven-version: 3.9.0
       - run: mvn -V -B verify
+      - name: slack
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        with:
+          channel-id: 'github-actions'
+          payload: |
+            {
+              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  }
+                }
+              ]
+            }
