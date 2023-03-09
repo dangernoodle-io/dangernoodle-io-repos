@@ -1,6 +1,7 @@
 {
   "organization": "dangernoodle-io",
   "settings": {
+    "deleteBranchOnMerge": true,
     "initialize": true,
     "teams": {
       "bots": "admin"
