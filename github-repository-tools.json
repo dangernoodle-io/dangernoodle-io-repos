@@ -1,34 +1,33 @@
 {
-    "organization": "dangernoodle-io",
-    "settings": {
-        "initialize": true,
-        "teams": {
-            "bots": "admin"
+  "organization": "dangernoodle-io",
+  "settings": {
+    "initialize": true,
+    "teams": {
+      "bots": "admin"
+    },
+    "branches": {
+      "protections": {
+        "main": {
+          "requiredStatusChecks": {
+            "requireUpToDate": true,
+            "contexts": [
+            ]
+          },
+          "pushAccess": {
+          }
         },
-        "branches": {
-            "protections": {
-		"main": {
-		    "requiredStatusChecks": {
-                        "requireUpToDate": true,
-                        "contexts": [
-			]
-		    },
-		    "pushAccess": {
-		    }
-		},
-                "master": {
-                    "requiredStatusChecks": {
-                        "requireUpToDate": true,
-                        "contexts": [
-                            "continuous-integration/travis-ci",
-                            "coverage/coveralls"
-                        ]
-                    }
-                },
-                "gh-pages": {
-                }
-		
-            }
+        "master": {
+          "requiredStatusChecks": {
+            "requireUpToDate": true,
+            "contexts": [
+              "continuous-integration/travis-ci",
+              "coverage/coveralls"
+            ]
+          }
+        },
+        "gh-pages": {
         }
+      }
     }
+  }
 }
