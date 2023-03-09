@@ -1,14 +1,20 @@
 {
-    "name": "dangernoodle-io-build-pom",
-    "settings": {
-        "branches": {
-            "protections": {
-                "master": {
-                    "requiredStatusChecks": {
-                        "requireUpToDate": true
-                    }
-                }
-            }
+  "name": "dangernoodle-io-build-pom",
+  "settings": {
+    "branches": {
+      "protections": {
+        "main": {
+          "requiredStatusChecks": {
+            "requireUpToDate": true,
+            "contexts": [
+              "pull-request / build",
+              "sonatype-lift"
+            ]
+          },
+          "pushAccess": {
+          }
         }
+      }
     }
+  }
 }
