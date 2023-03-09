@@ -7,23 +7,18 @@
       "bots": "admin"
     },
     "branches": {
+      "primary": "main",
       "protections": {
         "main": {
           "requiredStatusChecks": {
             "requireUpToDate": true,
             "contexts": [
+              "coverage/coveralls",
+              "pull-request / build",
+              "sonatype-lift"
             ]
           },
           "pushAccess": {
-          }
-        },
-        "master": {
-          "requiredStatusChecks": {
-            "requireUpToDate": true,
-            "contexts": [
-              "continuous-integration/travis-ci",
-              "coverage/coveralls"
-            ]
           }
         },
         "gh-pages": {
