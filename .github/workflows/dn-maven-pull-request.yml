@@ -12,6 +12,9 @@ jobs:
           java-version: 17
           maven-version: 3.9.0
       - name: maven
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          JENKINS_HOME: true
         run: mvn -V -B verify
       - name: slack
         id: slack
